@@ -36,7 +36,6 @@ body{
 .cabecalho__area__botao{
     display: flex;
 }
-/*(label)rotulagem da checkbox para o ligth mode*/
 label{
     width: 80px;
     height: 35px;
@@ -48,7 +47,6 @@ label{
     cursor: pointer;
     transition: 0.3s;
 }
-/*Botão de alternância dentro do rótulo(label)*/
 label:after{
     content: "";
     width: 30px;
@@ -61,48 +59,39 @@ label:after{
     box-shadow: inset 0px 2px 15px  rgba(255,255,255,0.1);
     transition: 0.3s;
 }
-/*Ocultação da checkbox*/
 input{
     width:0px;
     height:0px;
     visibility: hidden;
 }
-/*alteração da cor do background do botão quando o input for checked*/
 input:checked + label{
     background-color: #B8621B;
 }
-/* alteração da cor do botão e movimento do botão quando o input for checked*/
 input:checked + label:after{
     left: 15px;
     transform: translateX(100%);
     background: linear-gradient(180deg, #f3ffe8, #C4F4C3);
 }
-
-/*adicionando os svgs*/
 label svg{
     position: absolute;
     width: 15px;
     top: 9px;
     z-index: 99;
 }
-/*estilo e posição do svg de lua*/
 label svg.moon{
     left: 53px;
     color: #E3CCAE;
     transition: 0.3s;
 }
-/*estilo e posição do svg de sol*/
 label svg.sun{
     left: 12.5px;
     fill: #f6f6f6;
     transition: 0.3s;
 
 }
-/*se a checkbox estiver com check então o svg de lua recebe a cor*/
 input:checked + label svg.moon{
     fill: #B8621B;
 }
-/*se a checkbox estiver com check então o svg de sol recebe a cor*/
 input:checked + label svg.sun{
     fill: #C4F4C3;
 }
@@ -319,6 +308,32 @@ button:disabled{
     }
     [data-theme="dark"]{
         --background: linear-gradient(90deg, #262A56, #000000) ; 
+    }
+    label{
+        width: 72px;
+        height: 31.5px;
+        border-radius: 31.5px;
+    }
+    label:after{
+        width: 27px;
+        height: 27px;
+        top: 2.25px;
+        left: 4.5px;
+        border-radius: 27px;
+    }
+    label svg{
+        width: 13.5px;
+        top: 7.5px;
+    }
+    label svg.moon{
+        left: 50px;
+        color: #E3CCAE;
+        transition: 0.3s;
+    }
+    label svg.sun{
+        left: 11px;
+        fill: #f6f6f6;
+        transition: 0.3s;
     }
     .conteudo{
         flex-direction: column;

@@ -2,7 +2,7 @@ const check = document.getElementById("darkmode-toggle");
 const themeSystem = localStorage.getItem("themeSystem") || "light";
 let img = document.querySelector("#image-exclamacao");
 let entradaDeTexto = document.querySelector("textarea");
-let testeEntradaDeTexto = /[a-z]/;
+let testeEntradaDeTexto = /^[a-z ]+$/;
 let saidaDeTexto = document.querySelector("output");
 let mensagemSaidaDeTexto = document.getElementById("mensagem-saida");
 
@@ -32,6 +32,8 @@ function criptografar(){
         removerApresentacaoOutput();
         mensagemSaidaDeTexto.innerHTML="Texto Criptografado:"
         saidaDeTexto.innerHTML = textoCriptografado;    
+    }else {
+        alert("Digite apenas letras minúsculas, sem acento e sem caracteres especiais.");
     }
 }
 
@@ -41,13 +43,14 @@ function descriptografar(){
         removerApresentacaoOutput();
         mensagemSaidaDeTexto.innerHTML="Texto Descriptografado:"
         saidaDeTexto.innerHTML = textoDescriptografado;    
+    }else {
+        alert("Digite apenas letras minúsculas, sem acento e sem caracteres especiais.");
     }
 }
 
 function copiar(){
     navigator.clipboard.writeText(saidaDeTexto.value).then(
         () => {
-          alert("o texto foi copiado");
         }
     );
 }
